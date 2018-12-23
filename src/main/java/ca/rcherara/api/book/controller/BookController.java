@@ -54,11 +54,13 @@ public class BookController {
         LOGGER.debug("Received request to list a specific book");
         return bookService.getBook(id);
     }
+    
+ 
 
     @RequestMapping(value = "/books/{id}", method = RequestMethod.DELETE)
     @ApiOperation("Deletes a book from the system. 404 if the person's identifier is not found.")
     public void deleteBook(@ApiParam("Id of the book to be deleted. Cannot be empty.") @PathVariable Long id) {
-        LOGGER.debug("Received request to delete a specific book");
+        LOGGER.debug("Received request to delete  /books/{}", id);
         bookService.deleteBook(id);
     }
 

@@ -1,8 +1,16 @@
-FROM jeanblanchard/java:8
-LABEL environement="dev" service="book" owner="rcherara"
-LABEL Description="This image is used to start the rest-api-book executable" Vendor="API Books" Version="1.0"
-MAINTAINER rcherara
-COPY target/*.jar rest-api-book.jar
-CMD java -jar rest-api-book.jar
-#  The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
-EXPOSE 7680
+# Start with a base image containing Java runtime
+FROM openjdk:8-jre
+
+# Add Maintainer Info
+LABEL maintainer="cherara.reddah@icloud.com"
+LABEL Description="This is docker image of Rest Micro-Service Books" Vendor="API Books" Version="1.0"
+LABEL PROJECT_NAME=micro-service-book
+ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/rcherara/micro-service-book.jar"]
+
+# Make port 56810 available to the world outside this container
+EXPOSE 56810
+
+# The application's jar file
+CMD ["/bin/echo", "The application's jar  File Name : $JAR_FILE"]
+# Add the application's jar to the container
+ADD target/${JAR_FILE} /usr/share/rcherara/micro-service-book.jar

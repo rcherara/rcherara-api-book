@@ -61,12 +61,10 @@ public class BookServiceImpl implements BookService {
     	Optional<Book> existing = repository.findById(bookId);; // returns java8 optional
         if (existing.isPresent()) {
             return existing.get();
-        } else {
-        	
+        } else {      	
             // handle not found, return null or throw
         	  throw new BookAlreadyExistsException(
-                      String.format("Inexistent book with id=%s",bookId));
-     
+                      String.format("Inexistent book with id=%s",bookId));   
         }
 
     }
