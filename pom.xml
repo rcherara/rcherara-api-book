@@ -110,7 +110,15 @@
         </dependency>
 	</dependencies>
 
-<build>
+	<build>
+
+        <extensions>
+			<extension>
+				<groupId>com.gkatzioura.maven.cloud</groupId>
+				<artifactId>s3-storage-wagon</artifactId>
+				<version>1.5</version>
+			</extension>
+		</extensions>
 		<resources>
 			<resource>
 				<directory>docker</directory>
@@ -131,7 +139,7 @@
 				</executions>
 			</plugin>
 			<!-- This plugin is used to create a docker image and publish the image to docker hub-->
-<plugin>
+	<plugin>
 	<groupId>com.spotify</groupId>
 	<artifactId>dockerfile-maven-plugin</artifactId>
 	<version>1.4.9</version>
@@ -166,10 +174,8 @@
 			</configuration>
 		</execution>
 	</executions>	
-</plugin>
-
-			
-			<plugin>
+	</plugin>			
+	<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 				<executions>
@@ -206,5 +212,40 @@
 			
 		</plugins>
 	</build>
+    
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://localhost:8881/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://localhost:8881/repository/maven-releases/</url>
+		</repository>
+		<!-- 
+		<site>
+			<id>s3.site</id>
+			<url>s3://maven.rcherara.ca/site</url>
+		</site>
+		<repository>
+			<id>s3.release</id>
+			<url>s3://maven.rcherara.ca/release</url>
+		</repository>
+		<snapshotRepository>
+			<id>s3.snapshot</id>
+			<url>s3://maven.rcherara.ca/snapshot</url>
+		</snapshotRepository> -->  
 
+	</distributionManagement>
+	<repositories>
+		<!-- 
+<repository>
+			<id>repo.rcherara.ca</id>
+			<url>s3://maven.rcherara.ca/release</url>
+		</repository> -->
+		<repository>
+			<id>maven-group</id>
+			<url>http://localhost:8881/repository/maven-group/</url>
+        </repository>
+	</repositories>
 </project>
