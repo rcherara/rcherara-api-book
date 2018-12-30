@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BookSearchServiceApplication<micro-service-book>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "ca.rcherara.api.book.BookSearchServiceApplication",
+            "projectName": "micro-service-book",
+            "args": ""
+        }
+    ]
+}

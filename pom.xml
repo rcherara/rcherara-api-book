@@ -239,7 +239,7 @@
 	</distributionManagement>
 	<repositories>
 		<!-- 
-<repository>
+	<repository>
 			<id>repo.rcherara.ca</id>
 			<url>s3://maven.rcherara.ca/release</url>
 		</repository> -->

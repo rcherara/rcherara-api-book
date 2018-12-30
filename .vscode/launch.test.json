@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "micro-service-book",
+                "projectName": "micro-service-book",
+                "workingDirectory": "/Users/rcherara/Projects-Minikube/rcherara-api-book",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "micro-service-book",
+                "projectName": "micro-service-book",
+                "workingDirectory": "/Users/rcherara/Projects-Minikube/rcherara-api-book",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
